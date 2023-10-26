@@ -1,0 +1,9 @@
+ip address show
+
+ping -c 3 127.0.0.1
+
+sudo tcpdump -tn -i any icmp
+
+ping -c 3 8.8.8.8
+
+sudo tcpdump -tn -i any icmp

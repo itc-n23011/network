@@ -1,0 +1,11 @@
+sudo ip netns add helloworld
+
+ip netns list
+
+sudo ip netns exec helloworld ip address show
+
+ip address show
+
+sudo ip netns delete helloworld
+
+sudo ip netns exec helloworld bash
