@@ -1,0 +1,11 @@
+sudo ip netns exec ns1 tcpdump -tnel -i ns1-veth0 icmp or arp
+
+sudo ip netns exec ns1 ping -c 3 192.0.2.2 -I 192.0.2.1
+
+sudo ip netns exec ns1 tcpdump -tnel -i ns1-veth0 icmp or arp
+
+00:00:5e:00:53:01 > ff:ff:ff:ff:ff:ff, ethertype ARP (0x0806), length 42: Request who-has 192.0.2.2 tell 192.0.2.1, length 28
+
+00:00:5e:00:53:02 > 00:00:5e:00:53:01, ethertype ARP (0x0806), length 42: Reply 192.0.2.2 is-at 00:00:5e:00:53:02, length 28
+
+
